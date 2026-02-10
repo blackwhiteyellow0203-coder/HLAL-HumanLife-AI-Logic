@@ -1,0 +1,56 @@
+/* AI Logic Effect - Stable Data Stream */
+.glitch-effect {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  
+  /* Fix for text being cut off at the top */
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin-top: -0.2em;
+  
+  /* Gradient Text Fill (Flowing Data) */
+  background: linear-gradient(
+    110deg, 
+    #bae6fd 10%,  /* Sky 200 (Ice Blue) */
+    #e0f2fe 40%,  /* Sky 100 (Pale) */
+    #ffffff 50%,  /* White Highlight */
+    #e0f2fe 60%,  /* Sky 100 */
+    #bae6fd 90%   /* Sky 200 */
+  );
+  background-size: 200% auto;
+  
+  /* Make text transparent to show background */
+  color: transparent; 
+  background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* Smooth Flow Animation */
+  animation: data-stream 5s linear infinite;
+  
+  /* Soft AI Glow - Contained */
+  filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.5));
+}
+
+@keyframes data-stream {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Rainbow Aura Animation */
+@keyframes rainbow-glow {
+  0% { text-shadow: 0 0 8px #ff0000, 0 0 15px #ff0000; }
+  14% { text-shadow: 0 0 8px #ff7f00, 0 0 15px #ff7f00; }
+  28% { text-shadow: 0 0 8px #ffff00, 0 0 15px #ffff00; }
+  42% { text-shadow: 0 0 8px #00ff00, 0 0 15px #00ff00; }
+  57% { text-shadow: 0 0 8px #0000ff, 0 0 15px #0000ff; }
+  71% { text-shadow: 0 0 8px #4b0082, 0 0 15px #4b0082; }
+  85% { text-shadow: 0 0 8px #9400d3, 0 0 15px #9400d3; }
+  100% { text-shadow: 0 0 8px #ff0000, 0 0 15px #ff0000; }
+}
+
+.rainbow-aura {
+  animation: rainbow-glow 4s linear infinite;
+  color: #ffffff;
+}
