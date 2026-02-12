@@ -399,7 +399,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ system, onNavigate }) => {
                     <div className="flex justify-between items-baseline mb-6 border-b pb-4" style={{ borderColor: `${colors.border}40` }}>
                         <h3 className="text-lg font-bold tracking-wider" style={accentTextStyle}>PRO</h3>
                         <div className="text-xl md:text-2xl font-bold font-mono" style={accentTextStyle}>
-                            ¥20,000 <span className="text-xs font-normal opacity-50 font-sans" style={{ color: colors.textSecondary }}>/ month</span>
+                            ¥15,000 <span className="text-xs font-normal opacity-50 font-sans" style={{ color: colors.textSecondary }}>/ month</span>
                         </div>
                     </div>
                     
@@ -440,7 +440,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ system, onNavigate }) => {
       </main>
 
       {/* Footer */}
-      <footer className="w-full py-12 border-t text-center" style={{ borderColor: `${colors.border}20`, backgroundColor: colors.bgPrimary }}>
+      <footer className="w-full py-12 border-t text-center relative z-10" style={{ borderColor: `${colors.border}20`, backgroundColor: colors.bgPrimary }}>
         <p className="text-[10px] uppercase tracking-[0.2em] opacity-40 mb-2">
             Team HAYATO | HLAL
         </p>

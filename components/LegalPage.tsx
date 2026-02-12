@@ -151,7 +151,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ system, onNavigate }) => {
         </div>
       </main>
 
-      <footer className="w-full py-12 border-t text-center" style={{ borderColor: `${colors.border}20`, backgroundColor: colors.bgPrimary }}>
+      <footer className="w-full py-12 border-t text-center relative z-10" style={{ borderColor: `${colors.border}20`, backgroundColor: colors.bgPrimary }}>
         <p className="text-[10px] opacity-30 font-mono">
             © 2026 All Rights Reserved.
         </p>
