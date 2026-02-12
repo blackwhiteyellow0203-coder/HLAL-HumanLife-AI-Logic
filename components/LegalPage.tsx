@@ -1,10 +1,11 @@
 import React from 'react';
 import { DesignSystem } from '../types';
-import { ArrowLeft, BrainCircuit } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import HLALLogo from './HLALLogo';
 
 interface LegalPageProps {
   system: DesignSystem;
-  onNavigate: (page: 'home' | 'legal') => void;
+  onNavigate: (page: 'home' | 'legal' | 'profile') => void;
 }
 
 const LegalPage: React.FC<LegalPageProps> = ({ system, onNavigate }) => {
@@ -50,10 +51,17 @@ const LegalPage: React.FC<LegalPageProps> = ({ system, onNavigate }) => {
             <ArrowLeft size={20} style={{ color: colors.accent }} />
             <span className="text-sm font-bold tracking-widest">BACK</span>
           </button>
-          <div className={`text-lg tracking-[0.2em] font-bold ${fontHeading} flex items-center gap-2 opacity-50`}>
-            <BrainCircuit size={20} />
-            HLAL
-          </div>
+          
+          <button 
+              onClick={() => onNavigate('profile')} 
+              className={`text-lg tracking-[0.2em] font-bold ${fontHeading} flex items-center gap-3 opacity-50 hover:opacity-100 transition-opacity group relative`}
+          >
+              {/* Glow Effect */}
+              <div className="absolute top-1/2 left-4 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-accent/20 rounded-full blur-lg opacity-0 group-hover:opacity-60 transition-all duration-500 pointer-events-none" style={{ backgroundColor: colors.accent }}></div>
+              
+              <HLALLogo size={32} color={colors.accent} />
+              <span style={{ marginTop: '4px' }}>HLAL</span>
+          </button>
         </div>
       </nav>
 
@@ -85,7 +93,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ system, onNavigate }) => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-2 pb-6" style={tableRowStyle}>
                     <dt className="font-bold opacity-70 text-sm tracking-widest">電話番号</dt>
                     <dd className="md:col-span-2 font-medium">
-                        請求があり次第提供致しますので、必要な方はお申し出ください。
+                        080-4859-8523
                     </dd>
                 </div>
 

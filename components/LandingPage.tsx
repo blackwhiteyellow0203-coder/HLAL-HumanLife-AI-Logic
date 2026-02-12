@@ -1,10 +1,11 @@
 import React, { useMemo } from 'react';
 import { DesignSystem } from '../types';
-import { Check, BrainCircuit, LineChart, Award, Smartphone, Video, FileText, Fingerprint, Zap, ShieldCheck, Users, Layers } from 'lucide-react';
+import { Check, LineChart, Award, Smartphone, Video, FileText, Fingerprint, Zap, ShieldCheck, Users, Layers } from 'lucide-react';
+import HLALLogo from './HLALLogo';
 
 interface LandingPageProps {
   system: DesignSystem;
-  onNavigate: (page: 'home' | 'legal') => void;
+  onNavigate: (page: 'home' | 'legal' | 'profile') => void;
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({ system, onNavigate }) => {
@@ -144,10 +145,20 @@ const LandingPage: React.FC<LandingPageProps> = ({ system, onNavigate }) => {
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-30 border-b transition-all duration-700`} style={navBlurStyle}>
         <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className={`text-lg tracking-[0.2em] font-bold ${fontHeading} flex items-center gap-2`}>
-            <BrainCircuit size={20} style={{ color: colors.accent }} />
-            HLAL
-          </div>
+          <button 
+              onClick={() => onNavigate('profile')} 
+              className="flex items-center gap-3 group relative cursor-pointer"
+              aria-label="View Profile"
+          >
+              {/* Glow Effect */}
+              <div className="absolute top-1/2 left-4 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-accent/20 rounded-full blur-xl opacity-50 group-hover:opacity-100 group-hover:scale-125 transition-all duration-700 animate-pulse-slow pointer-events-none" style={{ backgroundColor: colors.accent }}></div>
+              
+              <div className="relative z-10 transition-transform duration-300 group-hover:scale-110">
+                  <HLALLogo size={32} color={colors.accent} />
+              </div>
+              <span style={{ marginTop: '4px' }} className={`text-lg tracking-[0.2em] font-bold ${fontHeading}`}>HLAL</span>
+          </button>
+          
           <div className="text-xs uppercase tracking-widest opacity-60 hidden sm:block">
             HumanLife : AI Logic
           </div>
